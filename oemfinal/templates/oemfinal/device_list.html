@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>DPM Device List</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <!--<link rel="stylesheet" href="oemfinalcss.css"> -->
+        <link rel="stylesheet" href="{% static "css/oemfinalcss.css" %}">
+
+
+
+    </head>
+<body id="wrapper">
+<div id="header"><span><h1>eMonobrief</h1><div class="glyphicon"><a href="{% url "device_new" %}">New Device</a></div></span></div>
+
+    <div>
+        {% for device in devices %}
+        <div id="deviceline">
+         <div>   <p><h3>Device : <a href="{% url "device_detail" pk=device.pk %}"> {{ device }} </a></h3></p> </div>
+         <div>   <p>LE {{ device.spe_LE }}  TA {{ device.spe_TA }} GA {{ device.dpm_GA }}</p> </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+
+
+</html>

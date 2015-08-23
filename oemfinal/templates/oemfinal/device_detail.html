@@ -1,0 +1,67 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>DPM Device Detail</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <!--<link rel="stylesheet" href="oemfinalcss.css"> -->
+        <link rel="stylesheet" href="{% static "css/oemfinalcss.css" %}">
+
+    </head>
+<body id="wrapper">
+    <div id="header"><span><h1>eMonobrief</h1><a href="{% url "device_list" %}"><div class="glyphicon">Back to List</div></a></span> </div>
+    
+    <div>
+        <h1> {{ device }}</h1>
+        <div>
+        
+        <div>
+            <p>A Tweet - possibly related</p>
+            <p><div id="tweet">{{ device.tweet }}</div></p>
+            <a class="btn btn-default" href="{% url "device_edit" pk=device.pk %}"><span class="glyphicon glyphicon-pencil">edit</span></a>
+        </div>
+        <hr />
+        <div id="section">
+         <p>Product Manager : {{ device.productManager }}</p>
+         <p>Code Name : {{ device }}</p>
+         <p>Last Updated : {{ device.lastSave }}</p>
+         <p>OEM : {{ device.oem }}</p>
+         <p>Market Name : {{ device.dev_MarketName }}</p>
+         <p>OS : {{ device.dev_OS }}</p>
+         <p>Portfolio : {{ device.dev_Category }}</p>
+         <p>Class : {{ device.dev_Class }}</p>
+        </div>
+        <hr />
+        <div id="section">
+            <p>DPM Cost : {{ device.dpm_Cost }}</p>
+            <p>DPM SRP : {{ device.dpm_SRP }}</p>
+        </div>
+        <hr />
+        <div id="section">
+            <p>SPE LE : {{ device.spe_LE }}</p>
+            <p>SPE FE : {{ device.spe_FE }}</p>
+            <p>SPE IFW : {{ device.spe_IFW }}</p>
+            <p>SPE FFW : {{ device.spe_FFW }}</p>
+            <p>SPE TA : {{ device.spe_TA }}</p>
+            </div>
+        <hr />
+        <div id="section">
+            <p>DPM PR : {{ device.dpm_PR }}</p>
+            <p>DPM Coming Soon : {{ device.dpm_ComSo }}</p>
+            <p>DPM PreSale : {{ device.dpm_PreSale }}</p>
+            <p>DPM GA : {{ device.dpm_GA }}</p>
+        </div>
+        <hr />
+        <div id="section">
+        <p>RFP Screen Width : {{ device.rfp_ScreenSizeW }}</p>
+        <p>RFP Screen Height : {{ device.rfp_ScreenSizeH }}</p>
+        <p>RFP Screen Resolution Height : {{ device.rfp_ResolutionH }}</p>
+        <p>RFP Screen Resolution Width : {{ device.rfp_ResolutionW }}</p>
+        <p>RFP Support Bands : {{ device.rfp_Bands }}</p>
+        <p>RFP Carrier Aggregation Supported? : {{ device.rfp_CASupport }}</p>
+        <p>RFP USB Type : {{ device.rfp_USBType }}</p>
+        <p>RFP Battery Size : {{ device.rfp_Battery }}</p>
+    </div>
+            <hr />
+    
+    </div>

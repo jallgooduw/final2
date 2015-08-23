@@ -1,0 +1,21 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>DPM Device Dataset</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static "css/oemfinalcss.css" %}">
+
+    </head>
+<body>
+   <h1>New Device</h1>
+   <div class="glyphicon"><button type="submit" class="save btn btn-default">Save</button></div>
+    <form method="POST" class="device-form">{% csrf_token %}
+        {{ form.as_p }}
+
+    </form>
+<div class="glyphicon"><button type="submit" class="save btn btn-default">Save</button></div>
+</body>
+
+
+</html>
